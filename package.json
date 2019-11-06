@@ -1,8 +1,8 @@
 {
   "name": "bundler",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
-  "main": "index.js",
+  "main": "./index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,9 +18,32 @@
   },
   "homepage": "https://github.com/polovi/bundler#readme",
   "bin": {
-    "bundler": "cli.js"
+    "bundler": "./bin/cli.js"
   },
-  "files": [
-    "index.js"
+  "dependencies": {
+    "archiver-promise": "^1.0.0",
+    "globalyzer": "^0.1.4",
+    "globrex": "^0.1.2"
+  },
+  "bundles": [
+    {
+      "dist": ".bundles/bundle1.zip",
+      "files": [
+        "bin/*"
+      ],
+      "packages": [
+        "globalyzer"
+      ]
+    },
+    {
+      "dist": ".bundles/bundle2.zip",
+      "files": [
+        "lib/**/*.js"
+      ],
+      "packages": [
+        "globalyzer",
+        "globrex"
+      ]
+    }
   ]
 }
