@@ -1,6 +1,6 @@
 {
   "name": "bundler",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "",
   "main": "./index.js",
   "scripts": {
@@ -18,32 +18,11 @@
   },
   "homepage": "https://github.com/polovi/bundler#readme",
   "bin": {
-    "bundler": "./bin/cli.js"
+    "bundle": "./bin/cli.js"
   },
   "dependencies": {
-    "archiver-promise": "^1.0.0",
     "globalyzer": "^0.1.4",
-    "globrex": "^0.1.2"
-  },
-  "bundles": [
-    {
-      "dist": ".bundles/bundle1.zip",
-      "files": [
-        "bin/*"
-      ],
-      "packages": [
-        "globalyzer"
-      ]
-    },
-    {
-      "dist": ".bundles/bundle2.zip",
-      "files": [
-        "lib/**/*.js"
-      ],
-      "packages": [
-        "globalyzer",
-        "globrex"
-      ]
-    }
-  ]
+    "globrex": "^0.1.2",
+    "yazl": "^2.5.1"
+  }
 }

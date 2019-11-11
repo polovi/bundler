@@ -1,8 +1,7 @@
 #!/usr/bin/env node
 
-const path = require('path')
 const fs = require('fs')
-const { bundle } = require('../lib/bundler')
+const { bundle } = require('../index')
 
 const [, , ...args] = process.argv
 
@@ -19,7 +18,7 @@ const options = args
   )
 
 const { bundles = [] } = JSON.parse(
-  fs.readFileSync(path.join(options.path, 'package.json'))
+  fs.readFileSync(options.path + '/package.json')
 )
 
-bundle(bundles).then(_ => console.log('Bundles ready'))
+bundle(bundles, options.path)
